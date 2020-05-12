@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class GildedRoseTest {
+class GildedRoseShould {
 
     @Test void
-    items_quality_and_sellIn_decreases_once_per_day() {
+    decreases_items_quality_and_sellIn_once_per_day() {
         final Item item = new ItemBuilder()
                 .setName("foo")
                 .setSellIn(1)
@@ -21,7 +21,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    when_the_sellIn_has_passed_quality_decreases_twice_as_fast() {
+    decreases_twice_as_fast_when_the_sellIn_has_passed_quality() {
         final Item item = new ItemBuilder()
                 .setName("foo")
                 .setSellIn(0)
@@ -34,7 +34,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    the_quality_of_an_item_is_never_negative() {
+    ensure_that_the_quality_of_an_item_is_never_negative() {
         final Item item = new ItemBuilder()
                 .setName("foo")
                 .setSellIn(0)
@@ -47,7 +47,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    quality_of_an_item_is_never_more_than_50() {
+    ensure_that_quality_of_an_item_is_never_more_than_50() {
         final Item item = new ItemBuilder()
                 .setName("Aged Brie")
                 .setSellIn(1)
@@ -60,7 +60,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    aged_brie_increases_in_quality_the_older_its_gets() {
+    increases_aged_brie_quality_the_older_its_gets() {
         final Item item = new ItemBuilder()
                 .setName("Aged Brie")
                 .setSellIn(1)
@@ -73,7 +73,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    aged_brie_increases_twice_as_fast_when_the_sellIn_date_has_passed() {
+    increases_twice_as_fast_aged_brie_quality_when_the_sellIn_date_has_passed() {
         final Item item = new ItemBuilder()
                 .setName("Aged Brie")
                 .setSellIn(0)
@@ -86,7 +86,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    sulfuras_never_change() {
+    ensure_that_sulfuras_never_change() {
         final Item item = new ItemBuilder()
                 .setName("Sulfuras, Hand of Ragnaros")
                 .setSellIn(1)
@@ -100,7 +100,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    backstage_passes_increase_by_one_when_sellIn_is_approaching() {
+    increase_by_one_backstage_passes_quality_when_sellIn_is_approaching() {
         final Item item = new ItemBuilder()
                 .setName("Backstage passes to a TAFKAL80ETC concert")
                 .setSellIn(12)
@@ -113,7 +113,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    backstage_passes_increase_by_two_when_sellIn_is_less_than_10() {
+    increase_by_two_backstage_passes_quality_when_sellIn_is_less_than_10() {
         final Item item = new ItemBuilder()
                 .setName("Backstage passes to a TAFKAL80ETC concert")
                 .setSellIn(9)
@@ -126,7 +126,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    backstage_passes_increase_by_three_when_sellIn_is_less_than_5() {
+    increase_by_three_backstage_passes_quality_when_sellIn_is_less_than_5() {
         final Item item = new ItemBuilder()
                 .setName("Backstage passes to a TAFKAL80ETC concert")
                 .setSellIn(4)
@@ -139,7 +139,7 @@ class GildedRoseTest {
     }
 
     @Test public void
-    backstage_passes_decreased_to_zero_when_sellIn_has_passed() {
+    set_to_zero_backstage_passes_quality_when_sellIn_has_passed() {
         final Item item = new ItemBuilder()
                 .setName("Backstage passes to a TAFKAL80ETC concert")
                 .setSellIn(0)
